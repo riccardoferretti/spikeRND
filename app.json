@@ -1,109 +1,109 @@
 {
-  type: 'View',
-  style: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    borderColor: '#00E850',
-    borderWidth: 2,
-    borderRadius: 10,
-    padding: 5,
-    width: 250,
-  },
-  props: {
-    children: [
-      {
-        type: 'Text',
-        style: {},
-        props: {
-          value: 'Here are a few options:'
-        }
-      },
-      {
-        type: 'View',
-        style: {
-          flexDirection: 'row',
-          marginTop: 10,
-          marginBottom: 10,
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-        },
-        props: {
-          children: [
-            {
-              type: 'Switch',
-              style: {
-                marginRight: 15,
-              },
-              props: {
-                value: true
-              }
-            },
-            {
-              type: 'Text',
-              props: {
-                value: 'First option'
-              }
-            }
-          ]
-        }
-      },
-      {
-        type: 'View',
-        style: {
-          flexDirection: 'row',
-          marginTop: 10,
-          marginBottom: 10,
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-        },
-        props: {
-          children: [
-            {
-              type: 'Switch',
-              style: {
-                marginRight: 15,
-              },
-              props: {
-                value: false
-              }
-            },
-            {
-              type: 'Text',
-              props: {
-                value: 'Second option'
-              }
-            }
-          ]
-        }
-      },
-      {
-        type: 'View',
-        style: {
-          flexDirection: 'row',
-          marginTop: 10,
-          marginBottom: 10,
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-        },
-        props: {
-          children: [
-            {
-              type: 'Slider',
-              style: {
-                width: 200
-              },
-              props: {
-                maximumValue: 10,
-                minimumValue: 1,
-                value: 5,
-                minimumTrackTintColor: 'red',
-                maximumTrackTintColor: 'green'
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
+   "type": "View",
+   "style": {
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "alignItems": "flex-start",
+      "borderColor": "#00E850",
+      "borderWidth": 2,
+      "borderRadius": 10,
+      "padding": 5,
+      "width": 250
+   },
+   "props": {
+      "children": [
+         {
+            "type": "Text",
+            "style": {},
+            "props": {
+               "value": "Here are a few options:"
+            }
+         },
+         {
+            "type": "View",
+            "style": {
+               "flexDirection": "row",
+               "marginTop": 10,
+               "marginBottom": 10,
+               "justifyContent": "flex-start",
+               "alignItems": "center"
+            },
+            "props": {
+               "children": [
+                  {
+                     "type": "Switch",
+                     "style": {
+                        "marginRight": 15
+                     },
+                     "props": {
+                        "value": true
+                     }
+                  },
+                  {
+                     "type": "Text",
+                     "props": {
+                        "value": "First option"
+                     }
+                  }
+               ]
+            }
+         },
+         {
+            "type": "View",
+            "style": {
+               "flexDirection": "row",
+               "marginTop": 10,
+               "marginBottom": 10,
+               "justifyContent": "flex-start",
+               "alignItems": "center"
+            },
+            "props": {
+               "children": [
+                  {
+                     "type": "Switch",
+                     "style": {
+                        "marginRight": 15
+                     },
+                     "props": {
+                        "value": false
+                     }
+                  },
+                  {
+                     "type": "Text",
+                     "props": {
+                        "value": "Second option"
+                     }
+                  }
+               ]
+            }
+         },
+         {
+            "type": "View",
+            "style": {
+               "flexDirection": "row",
+               "marginTop": 10,
+               "marginBottom": 10,
+               "justifyContent": "flex-start",
+               "alignItems": "center"
+            },
+            "props": {
+               "children": [
+                  {
+                     "type": "Slider",
+                     "style": {
+                        "width": 200
+                     },
+                     "props": {
+                        "maximumValue": 10,
+                        "minimumValue": 1,
+                        "value": 5,
+                        "minimumTrackTintColor": "red",
+                        "maximumTrackTintColor": "green"
+                     }
+                  }
+               ]
+            }
+         }
+      ]
+   }
 }

@@ -1,0 +1,27 @@
+PODS:
+  - React/Core (0.6.6)
+  - React/RCTImage (0.6.6):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.6.6):
+    - React/Core
+  - React/RCTText (0.6.6):
+    - React/Core
+  - React/RCTWebSocket (0.6.6):
+    - React/Core
+
+DEPENDENCIES:
+  - React/Core (from `./node_modules/react-native-desktop`)
+  - React/RCTImage (from `./node_modules/react-native-desktop`)
+  - React/RCTNetwork (from `./node_modules/react-native-desktop`)
+  - React/RCTText (from `./node_modules/react-native-desktop`)
+  - React/RCTWebSocket (from `./node_modules/react-native-desktop`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: ./node_modules/react-native-desktop
+
+SPEC CHECKSUMS:
+  React: 010bbff6f29e0fcac8996559508577e1b3090cb6
+
+COCOAPODS: 0.39.0

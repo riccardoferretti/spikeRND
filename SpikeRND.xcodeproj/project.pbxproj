@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033F10DD1CE1EA7C004CCE1A /* app.json in Resources */ = {isa = PBXBuildFile; fileRef = 033F10DC1CE1EA7C004CCE1A /* app.json */; };
 		8B2E2EE61CDD0771003B3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2E2EE51CDD0771003B3E0F /* AppDelegate.swift */; };
 		8B2E2EE81CDD0771003B3E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2E2EE71CDD0771003B3E0F /* Assets.xcassets */; };
 		8B2E2EEB1CDD0771003B3E0F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2E2EE91CDD0771003B3E0F /* MainMenu.xib */; };
+		B56EB34599BD025ED7EE6C41 /* Pods_SpikeRND.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED15CE7A241F0D2BE1C6522 /* Pods_SpikeRND.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033F10A41CE1C0EB004CCE1A /* SpikeRND-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpikeRND-Bridging-Header.h"; sourceTree = "<group>"; };
+		033F10DC1CE1EA7C004CCE1A /* app.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = app.json; sourceTree = SOURCE_ROOT; };
+		0ED15CE7A241F0D2BE1C6522 /* Pods_SpikeRND.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpikeRND.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		684CF86BD8CEC100891FB20A /* Pods-SpikeRND.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpikeRND.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpikeRND/Pods-SpikeRND.release.xcconfig"; sourceTree = "<group>"; };
 		8B2E2EE21CDD0771003B3E0F /* SpikeRND.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpikeRND.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2E2EE51CDD0771003B3E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B2E2EE71CDD0771003B3E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2E2EEA1CDD0771003B3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8B2E2EEC1CDD0771003B3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C02F58733652926D047CDF6F /* Pods-SpikeRND.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpikeRND.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpikeRND/Pods-SpikeRND.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,17 +32,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56EB34599BD025ED7EE6C41 /* Pods_SpikeRND.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033F10951CE1BED8004CCE1A /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		177B0F27CD6257B5ADA7F3AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C02F58733652926D047CDF6F /* Pods-SpikeRND.debug.xcconfig */,
+				684CF86BD8CEC100891FB20A /* Pods-SpikeRND.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3C6DE256A5EDE561FE9C16EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0ED15CE7A241F0D2BE1C6522 /* Pods_SpikeRND.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B2E2ED91CDD0771003B3E0F = {
 			isa = PBXGroup;
 			children = (
 				8B2E2EE41CDD0771003B3E0F /* SpikeRND */,
 				8B2E2EE31CDD0771003B3E0F /* Products */,
+				033F10951CE1BED8004CCE1A /* Libraries */,
+				177B0F27CD6257B5ADA7F3AF /* Pods */,
+				3C6DE256A5EDE561FE9C16EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -50,10 +85,12 @@
 		8B2E2EE41CDD0771003B3E0F /* SpikeRND */ = {
 			isa = PBXGroup;
 			children = (
+				033F10DC1CE1EA7C004CCE1A /* app.json */,
 				8B2E2EE51CDD0771003B3E0F /* AppDelegate.swift */,
 				8B2E2EE71CDD0771003B3E0F /* Assets.xcassets */,
 				8B2E2EE91CDD0771003B3E0F /* MainMenu.xib */,
 				8B2E2EEC1CDD0771003B3E0F /* Info.plist */,
+				033F10A41CE1C0EB004CCE1A /* SpikeRND-Bridging-Header.h */,
 			);
 			path = SpikeRND;
 			sourceTree = "<group>";
@@ -65,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B2E2EEF1CDD0771003B3E0F /* Build configuration list for PBXNativeTarget "SpikeRND" */;
 			buildPhases = (
+				FC7A366A039B7183F651B249 /* Check Pods Manifest.lock */,
 				8B2E2EDE1CDD0771003B3E0F /* Sources */,
 				8B2E2EDF1CDD0771003B3E0F /* Frameworks */,
 				8B2E2EE01CDD0771003B3E0F /* Resources */,
+				4A9317D2AB068C4736EF5DE0 /* Embed Pods Frameworks */,
+				E5109C5B8472B918250DC3B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -117,10 +157,59 @@
 			files = (
 				8B2E2EE81CDD0771003B3E0F /* Assets.xcassets in Resources */,
 				8B2E2EEB1CDD0771003B3E0F /* MainMenu.xib in Resources */,
+				033F10DD1CE1EA7C004CCE1A /* app.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A9317D2AB068C4736EF5DE0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpikeRND/Pods-SpikeRND-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5109C5B8472B918250DC3B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpikeRND/Pods-SpikeRND-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC7A366A039B7183F651B249 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B2E2EDE1CDD0771003B3E0F /* Sources */ = {
@@ -229,25 +318,39 @@
 		};
 		8B2E2EF01CDD0771003B3E0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C02F58733652926D047CDF6F /* Pods-SpikeRND.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/node_modules/react-native-desktop/React/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = SpikeRND/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = spike.rnd.SpikeRND;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		8B2E2EF11CDD0771003B3E0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 684CF86BD8CEC100891FB20A /* Pods-SpikeRND.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/node_modules/react-native-desktop/React/**",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = SpikeRND/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = spike.rnd.SpikeRND;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -270,6 +373,7 @@
 				8B2E2EF11CDD0771003B3E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
