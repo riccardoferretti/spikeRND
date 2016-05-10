@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "node_modules/react-native-desktop/React/Base/RCTRootView.m"
-            timestampString = "484567544.247519"
+            timestampString = "484575228.977688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
