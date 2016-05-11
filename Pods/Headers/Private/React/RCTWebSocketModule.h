@@ -1,0 +1,1 @@
+../../../../node_modules/react-native-desktop/Libraries/WebSocket/RCTWebSocketModule.h
