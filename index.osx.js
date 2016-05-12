@@ -1,15 +1,38 @@
 import ReactNative from 'react-native-desktop';
 import React from 'react';
 
-const { View, Text, SliderIOS, AppRegistry } = ReactNative;
+const {
+  View,
+  Text,
+  SliderIOS,
+  PickerIOS,
+  PickerItemIOS,
+  AppRegistry,
+  LayoutAnimation
+} = ReactNative;
 
 // eslint-disable-next-line
 const RCTDeviceEventEmitter = require('RCTDeviceEventEmitter');
 
+const DEVICE_RESOLUTIONS = {
+  'iphone5': {
+    width: 320,
+    height: 568
+  },
+  'iphone6': {
+    width: 375,
+    height: 667
+  },
+  'iphone6plus': {
+    width: 414,
+    height: 736
+  }
+}
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      deviceName: 'iphone6',
       metadataTree: {
         type: 'View',
         style: {
@@ -87,7 +110,34 @@ class App extends React.Component {
   }
 
   render() {
-    return this.buildTree(this.state.metadataTree);
+    const { width, height } = DEVICE_RESOLUTIONS[this.state.deviceName];
+    console.log(this.state.metadataTree)
+    return (
+      <View style={{flex: 1}}>
+        <View style={{width: 350}}>
+          <PickerIOS
+            itemStyle={{fontSize: 12}}
+            selectedValue={this.state.deviceName}
+            onValueChange={(deviceName) => this.changeResolution(deviceName)}>
+            {Object.keys(DEVICE_RESOLUTIONS).map((deviceName) => (
+              <PickerItemIOS
+                key={deviceName}
+                value={deviceName}
+                label={deviceName}
+              />
+            ))}
+          </PickerIOS>
+        </View>
+        <View style={{width, height, backgroundColor: 'white'}}>
+          {this.buildTree(this.state.metadataTree)}
+        </View>
+      </View>
+    );
+  }
+
+  changeResolution(deviceName) {
+    LayoutAnimation.linear();
+    this.setState({deviceName});
   }
 
   renderPlayground() {

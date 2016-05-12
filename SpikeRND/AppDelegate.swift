@@ -20,6 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, RCTBridgeDelegate {
 
     let rootView = NSView(frame: NSRect(x: 0, y: 0, width: 1100, height: 620))
     let appDefTextbox = Views.createAppTextField(frame:  NSRect(x: 10, y: 10, width: 400, height: 600)) { text in
+        // for ios
+        self.saveMetadataToFile(text)
+        // for osx
         self.bridge?.eventDispatcher.sendDeviceEventWithName("onCommit", body: ["metadata": text])
     }
     let renderView = Views.createRenderView(frame: NSRect(x: 430, y: 10, width: 660, height: 600))
@@ -27,25 +30,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, RCTBridgeDelegate {
     rootView.subviews = [appDefTextbox, renderView]
 
     window.contentView = rootView
-    window.minSize = NSSize(width: 1100, height: 620)
+    window.minSize = NSSize(width: 900, height: 620)
     windowController.showWindow(self.window)
 
     bridge = RCTBridge(delegate:self, launchOptions: [:])
     let reactRootView = RCTRootView(bridge: bridge, moduleName: "SpikeRND", initialProperties: nil)
     reactRootView.frame = renderView.bounds
     renderView.addSubview(reactRootView)
-    //rootView.subviews = [appDefTextbox, reactRootView]
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {
   }
 
   func sourceURLForBridge(bridge: RCTBridge) -> NSURL? {
-    #if BUNDLE
-      return NSBundle.mainBundle().URLForResource("main", withExtension: "jsbundle")
-    #else
-      return NSURL(string: "http://localhost:8081/index.osx.bundle?platform=osx&dev=true")
-    #endif
+
+    return NSBundle.mainBundle().URLForResource("main", withExtension: "jsbundle")
+    //return NSURL(string: "http://localhost:8081/index.osx.bundle?platform=osx&dev=true")
   }
 
   func loadSourceForBridge(bridge: RCTBridge, withBlock loadCallback:RCTSourceLoadBlock) {
@@ -54,10 +54,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, RCTBridgeDelegate {
             // some logic here (hide spinner or show indicator
             loadCallback(err, data)
         }
-    } 
-
+    }
   }
 
+  func saveMetadataToFile(json: String) {
+    // TODO: find the real file
+    let defaultAppJsonPath = "/Users/potomushto/Projects/SpikeRND/app.json"
+    
+    try! json.writeToFile(defaultAppJsonPath, atomically: true, encoding: NSUTF8StringEncoding)
+
+  }
 }
 
 struct Views {
@@ -67,15 +73,15 @@ struct Views {
     return renderView
   }
 
-static func readDefaultMetadata() -> String {
+  static func readDefaultMetadata() -> String {
     do {
-        let defaultApp = NSBundle.mainBundle().pathForResource("app", ofType: "json")
-        let content = try String(contentsOfFile:defaultApp!, encoding: NSUTF8StringEncoding)
+        let defaultAppJsonPath = NSBundle.mainBundle().pathForResource("app", ofType: "json")
+        let content = try String(contentsOfFile:defaultAppJsonPath!, encoding: NSUTF8StringEncoding)
         return content
     } catch _ as NSError {
         return ""
     }
-}
+  }
 
   static func createAppTextField(frame frame: NSRect, onCommit: String -> ()) -> NSView {
     let scrollview = NSScrollView(frame: frame)
@@ -86,7 +92,8 @@ static func readDefaultMetadata() -> String {
     textfield.automaticTextReplacementEnabled = false
     textfield.automaticQuoteSubstitutionEnabled = false
     textfield.automaticSpellingCorrectionEnabled = false
-    textfield.string = readDefaultMetadata()
+    let initialData = readDefaultMetadata()
+    textfield.string = initialData
     scrollview.documentView = textfield
     return scrollview
   }

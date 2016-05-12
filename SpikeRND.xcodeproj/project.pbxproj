@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		033F10DD1CE1EA7C004CCE1A /* app.json in Resources */ = {isa = PBXBuildFile; fileRef = 033F10DC1CE1EA7C004CCE1A /* app.json */; };
+		0340AE021CE4BCAE000AB36C /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 0340AE011CE4BCAE000AB36C /* main.jsbundle */; };
 		8B2E2EE61CDD0771003B3E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2E2EE51CDD0771003B3E0F /* AppDelegate.swift */; };
 		8B2E2EE81CDD0771003B3E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2E2EE71CDD0771003B3E0F /* Assets.xcassets */; };
 		8B2E2EEB1CDD0771003B3E0F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2E2EE91CDD0771003B3E0F /* MainMenu.xib */; };
@@ -15,8 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		033F10A41CE1C0EB004CCE1A /* SpikeRND-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpikeRND-Bridging-Header.h"; sourceTree = "<group>"; };
 		033F10DC1CE1EA7C004CCE1A /* app.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = app.json; sourceTree = SOURCE_ROOT; };
+		0340ADFC1CE4B54B000AB36C /* SpikeRND-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpikeRND-Bridging-Header.h"; sourceTree = "<group>"; };
+		0340AE011CE4BCAE000AB36C /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		0ED15CE7A241F0D2BE1C6522 /* Pods_SpikeRND.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpikeRND.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		684CF86BD8CEC100891FB20A /* Pods-SpikeRND.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpikeRND.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpikeRND/Pods-SpikeRND.release.xcconfig"; sourceTree = "<group>"; };
 		8B2E2EE21CDD0771003B3E0F /* SpikeRND.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpikeRND.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,12 +87,13 @@
 		8B2E2EE41CDD0771003B3E0F /* SpikeRND */ = {
 			isa = PBXGroup;
 			children = (
+				0340AE011CE4BCAE000AB36C /* main.jsbundle */,
 				033F10DC1CE1EA7C004CCE1A /* app.json */,
 				8B2E2EE51CDD0771003B3E0F /* AppDelegate.swift */,
 				8B2E2EE71CDD0771003B3E0F /* Assets.xcassets */,
 				8B2E2EE91CDD0771003B3E0F /* MainMenu.xib */,
 				8B2E2EEC1CDD0771003B3E0F /* Info.plist */,
-				033F10A41CE1C0EB004CCE1A /* SpikeRND-Bridging-Header.h */,
+				0340ADFC1CE4B54B000AB36C /* SpikeRND-Bridging-Header.h */,
 			);
 			path = SpikeRND;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				8B2E2EE81CDD0771003B3E0F /* Assets.xcassets in Resources */,
 				8B2E2EEB1CDD0771003B3E0F /* MainMenu.xib in Resources */,
 				033F10DD1CE1EA7C004CCE1A /* app.json in Resources */,
+				0340AE021CE4BCAE000AB36C /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +325,7 @@
 			baseConfigurationReference = C02F58733652926D047CDF6F /* Pods-SpikeRND.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/node_modules/react-native-desktop/React/**",
@@ -331,7 +336,8 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = spike.rnd.SpikeRND;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpikeRND/SpikeRND-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -340,6 +346,7 @@
 			baseConfigurationReference = 684CF86BD8CEC100891FB20A /* Pods-SpikeRND.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/node_modules/react-native-desktop/React/**",
@@ -350,7 +357,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = spike.rnd.SpikeRND;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpikeRND/SpikeRND-Bridging-Header.h";
 			};
 			name = Release;
 		};

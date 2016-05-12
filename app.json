@@ -2,13 +2,14 @@
    "type": "View",
    "style": {
       "flexDirection": "column",
-      "justifyContent": "flex-start",
+      "justifyContent": "center",
       "alignItems": "flex-start",
-      "borderColor": "#00E850",
-      "borderWidth": 2,
-      "borderRadius": 10,
-      "padding": 5,
-      "width": 250
+      "borderColor": "red",
+      "borderWidth": 20,
+      "borderRadius": 0,
+      "padding": 15,
+      "width": 350
+
    },
    "props": {
       "children": [
